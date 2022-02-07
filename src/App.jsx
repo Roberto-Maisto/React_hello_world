@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GreetingInput from './GreetingInput';
 import GreetingOutput from './GreetingOutput';
 
 
@@ -13,17 +14,17 @@ export class App extends Component {
     planet: "Venus",
   };
 
+  renderInput(event) {
+    this.setState({ planet: event.target.value });
+  }
+
   render() {
     // const planet = "Venus";
     const { planet } = this.state;
     return (
       <div>
         <GreetingOutput planet={planet} />
-        <input type="text" placeholder="Enter planet name"
-          onChange={(event) => {
-            this.setState({ planet: event.target.value });
-          }}
-        />
+        <GreetingInput renderInput={this.renderInput.bind(this)}/>
     </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GreetngOutput = (props) => {
+const GreetingOutput = (props) => {
     return (
         <div>
             <h1>Hello {props.planet} from Functional Component</h1>
