@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GreetingInput from "./GreetingInput";
 import GreetingOutput from "./GreetingOutput";
 
 const App = () => {
-  const [planet, setPlanet] = useState("Venus");
+  const [planet, setPlanet] = useState();
+
+  useEffect(() => {
+    // Axios call here, and within 
+    setPlanet("Venus")
+  }, []);
+
   return (
     <div>
       <GreetingOutput planet={planet} />
